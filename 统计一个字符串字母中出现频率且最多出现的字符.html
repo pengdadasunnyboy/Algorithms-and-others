@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let  str = 'ssssdasdasdasdasdasdsadadadadadadavfgrtrtrert'
+        let list = Array.from(str);
+
+        let count = {};
+
+        for(let i = 0; i < list.length; i++){
+            let v = list[i];
+            if(count[v]){
+                count[v] += 1;
+            }else{
+                count[v] = 1;
+            }
+        }
+        console.log(count)
+
+        let most = 0;
+        let model = [];//这里使用数组因为最大值可能有很多个相等的
+        for(let i in count){
+            if(count[i] > most){
+                most = count[i]
+                model.push(i)
+            }
+        }
+        console.log(most, model)
+    </script>
+</body>
+</html>
